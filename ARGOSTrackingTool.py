@@ -16,13 +16,13 @@ file_name = './Data/Raw/Sara Text.txt'
 file_object = open(file_name,'r')
 
 #Read contents of file into a list
-lineString = file_object.readlines()
+lineString = file_object.readline()
 
 #Pretend we read one line of data from the file
 while lineString:
     # Check if line is a data line
-    if lineString[0] in ('#', 'u'):
-        lineString = file_object.readlines()
+    if lineString[0] in ('#','u'):
+        lineString = file_object.readline()
         continue
 
     #Split the string into a list of data items
@@ -39,4 +39,4 @@ while lineString:
     print(f"Record {record_id} indicates Sara was seen at lat:{obs_lat},lon:{obs_lon} on {obs_date}")
 
     # Read next line
-    lineString = file_object.readlines()
+    lineString = file_object.readline()
