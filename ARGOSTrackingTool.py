@@ -19,14 +19,14 @@ file_object = open(file_name,'r')
 lineString = file_object.readline()
 
 #Pretend we read one line of data from the file
-while lineString:
+for linestring in line_list:
     # Check if line is a data line
     if lineString[0] in ('#','u'):
         lineString = file_object.readline()
         continue
 
     #Split the string into a list of data items
-    lineData = lineString.split()
+    lineData = linestring.split()
 
     #Extract items in list into variables
     record_id = lineData[0]
